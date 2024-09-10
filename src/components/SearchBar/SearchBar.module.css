@@ -1,0 +1,22 @@
+.search_box {
+position: relative;
+display: flex;
+gap: 10px;
+}
+
+.search_input {
+border: 1px solid black;
+border-radius: 3px;
+padding: 5px;
+padding-left: 23px;
+}
+.search_input::placeholder {
+color:rgb(71, 67, 67);
+font-size: 12px
+}
+
+.search_icon {
+position: absolute;
+top: 6px;
+left: 5px
+}
