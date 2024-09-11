@@ -2,4 +2,11 @@
     width: 180px;
     height: 130px;
     object-fit: cover;
+    cursor: pointer;
+    transition: transform 300ms ease-in-out;  
+}
+.image:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 5px 3px rgba(26, 68, 86, 0.42);
+    border-radius: 3px;
 }

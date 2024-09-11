@@ -1,14 +1,25 @@
 .search_box {
 display: flex;
 gap: 10px;
-align-items: center;
+/* align-items: center; */
 justify-content: center;
+background-color: blue;
+padding: 20px;
 }
 
 .search_input {
-border: 1px solid black;
+border: 1px solid transparent;
 border-radius: 3px;
 padding: 10px;
+outline: transparent;
+background-color: rgb(249, 249, 249);
+}
+.search_input:hover {
+    border-color: #646cff;
+  }
+.search_input:focus,
+.search_input:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 .search_input::placeholder {
 color:rgb(71, 67, 67);

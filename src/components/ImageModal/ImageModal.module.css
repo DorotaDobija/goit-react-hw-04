@@ -1,4 +1,16 @@
 .modal_poster {
-    width: 200px;
-    height: 100px;
+    width: 420px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+.info_box {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.text {
+    font-weight: 500;
+    margin: 5px;
 }

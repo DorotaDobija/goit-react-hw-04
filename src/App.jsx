@@ -27,7 +27,6 @@ function App() {
       const data = await FetchImages(word, page);
       setImages(data);
       setPage((prev) => prev + 1)
-      // console.log(page)
     } catch {
       setError(true)
     } finally {
@@ -36,8 +35,6 @@ function App() {
   
   }
 
-  // console.log(searchWord)
-
   const handleClick = async () => {
     try {
     setLoading(true);
@@ -45,7 +42,6 @@ function App() {
     setImages((prev)=> [...prev, ...data]);
     console.log(data);
     setPage((prev) => prev + 1)
-    // console.log(page)
     } catch {
       setError(true)
     } finally {
@@ -64,7 +60,7 @@ function App() {
     <LoadMoreBtn paginationClick={handleClick}/>
     <ImageModal images={images}/>
     </>}
-  {loading && <Loader/>}
+    {loading && <Loader/>}
 </>
   )
 }

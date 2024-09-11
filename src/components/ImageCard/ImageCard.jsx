@@ -9,11 +9,10 @@ export const ImageCard = ({image}) => {
 
   const handleClickImg = (e) => {
 
-    // console.log(e.target)
     setClickId(e.target.id);
     handleModalOpen();
   }
-    return <div onClick={handleClickImg}>
+    return <div onClick={handleClickImg} className={css.img_box}>
     <img className={css.image} src={urls.small} alt={alt_description} id={id} />
   </div>
 }
