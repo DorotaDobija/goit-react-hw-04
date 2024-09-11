@@ -1,4 +1,4 @@
-import { FiSearch } from "react-icons/fi";
+
 import css from './SearchBar.module.css'
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -21,7 +21,6 @@ form.reset();
 
     return <header>
     <form onSubmit={handleSubmit} className={css.search_box}>
-    <FiSearch className={css.search_icon}/>
     <input type="text" name="search" placeholder="Search images and photo" className={css.search_input} autoComplete="off" autoFocus></input>
     <Toaster  position="top-right" reverseOrder={false}/>
     <button type="submit">Search</button>
