@@ -1,21 +1,24 @@
 
 import css from './SearchBar.module.css'
 import toast, { Toaster } from 'react-hot-toast';
+import { useSearchContext } from '../../hooks/useSearchContext';
 
 
 export const SearchBar = ({ onSearch }) => {
 
+const { setSearchWord } = useSearchContext();
+
 const handleSubmit = (e) => {
 e.preventDefault();
 const form = e.target;
-const searchWord = form.elements.search.value;
+const word = form.elements.search.value;
+setSearchWord(word)
 
-if (searchWord === '') {
+if (word === '') {
 toast.error("Complete the word !")
 return;
 }
-
-onSearch(searchWord);
+onSearch(word);
 form.reset();
 }
 
