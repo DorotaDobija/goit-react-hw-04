@@ -7,6 +7,7 @@ import { Loader } from './components/Loader/Loader'
 import { ErrorMessage } from './components/ErrorMessage/ErrorMessage'
 import { LoadMoreBtn } from './components/LoadMoreBtn/LoadMoreBtn'
 import { useSearchContext } from './hooks/useSearchContext'
+import { ImageModal } from './components/ImageModal/ImageModal'
 
 function App() {
   const [images, setImages] = useState([]);
@@ -26,7 +27,7 @@ function App() {
       const data = await FetchImages(word, page);
       setImages(data);
       setPage((prev) => prev + 1)
-      console.log(page)
+      // console.log(page)
     } catch {
       setError(true)
     } finally {
@@ -35,7 +36,7 @@ function App() {
   
   }
 
-  console.log(searchWord)
+  // console.log(searchWord)
 
   const handleClick = async () => {
     try {
@@ -44,7 +45,7 @@ function App() {
     setImages((prev)=> [...prev, ...data]);
     console.log(data);
     setPage((prev) => prev + 1)
-    console.log(page)
+    // console.log(page)
     } catch {
       setError(true)
     } finally {
@@ -61,6 +62,7 @@ function App() {
   {images.length > 0 && <>
     <ImagesGallery images={images}/>
     <LoadMoreBtn paginationClick={handleClick}/>
+    <ImageModal images={images}/>
     </>}
   {loading && <Loader/>}
 </>

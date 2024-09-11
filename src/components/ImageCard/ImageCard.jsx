@@ -1,7 +1,19 @@
 import css from './ImageCard.module.css'
+import { useSearchContext } from '../../hooks/useSearchContext'
 
-export const ImageCard = ({url, alt}) => {
-    return <div>
-    <img className={css.image} src={url} alt={alt} />
+export const ImageCard = ({image}) => {
+
+  const {urls, alt_description, id} = image
+
+  const { setClickId, handleModalOpen } =  useSearchContext();
+
+  const handleClickImg = (e) => {
+
+    // console.log(e.target)
+    setClickId(e.target.id);
+    handleModalOpen();
+  }
+    return <div onClick={handleClickImg}>
+    <img className={css.image} src={urls.small} alt={alt_description} id={id} />
   </div>
 }
