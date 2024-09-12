@@ -24,7 +24,8 @@ function App() {
       setImages([])
       setError(false);
       setLoading(true);
-      const data = await FetchImages(word, page);
+      const data = await FetchImages(word);
+      console.log(data)
       setImages(data);
       setPage((prev) => prev + 1)
     } catch {
@@ -40,7 +41,6 @@ function App() {
     setLoading(true);
     const data = await FetchImages(searchWord, page);
     setImages((prev)=> [...prev, ...data]);
-    console.log(data);
     setPage((prev) => prev + 1)
     } catch {
       setError(true)
